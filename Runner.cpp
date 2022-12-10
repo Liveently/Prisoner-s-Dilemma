@@ -49,24 +49,6 @@ TStatus Runner::getStatus() {
     return status_;
 }
 
-void Runner::setMode(TMode mode) {
-    status_ = TStatus::OK;
-    gameMode_ = mode;
-}
-
-void Runner::setStrategies(const std::vector<std::string> &names) {
-    status_ = TStatus::OK;
-    strategyNames_ = names;
-}
-
-void Runner::setStepsCount(size_t stepsCount) {
-    status_ = TStatus::OK;
-    stepsCount_ = stepsCount;
-}
-
-void Runner::setPrintingMode(bool printing) {
-    printing_ = printing;
-}
 
 bool Runner::setScoreMapFromFile(const std::string &fileName) {
     std::ifstream matrixFile;
@@ -90,11 +72,7 @@ bool Runner::setScoreMapFromFile(const std::string &fileName) {
     return true;
 }
 
-bool Runner::setConfigsFromFile(const std::string &fileName) {
-    configsFileName_ = fileName;
-    status_ = TStatus::OK;
-    return true;
-}
+
 
 bool Runner::checkStrategiesCount() {
     if (gameMode_ == TMode::TOURNAMENT) {

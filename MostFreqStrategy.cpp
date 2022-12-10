@@ -26,12 +26,14 @@ TChoice MostFreqStrategy::getChoice() {
         }
     }
     std::array<TChoice, combLen> mostUsedChoices = {TChoice::DEF, TChoice::DEF, TChoice::DEF};
+
     for (size_t i = 0; i < 3; i++) {
         if (choiceCounts[i][TChoice::COOP] > choiceCounts[i][TChoice::DEF]) {
             mostUsedChoices[i] = TChoice::COOP;
         }
     }
     mostUsedChoices[orderNumber_] = TChoice::DEF;
+
     size_t defScore = scoreMap_[mostUsedChoices][orderNumber_];
     mostUsedChoices[orderNumber_] = TChoice::COOP;
     size_t coopScore = scoreMap_[mostUsedChoices][orderNumber_];

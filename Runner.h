@@ -25,17 +25,12 @@ public:
 
     TStatus getStatus();
 
-    void setMode(TMode mode);
-
-    void setStrategies(const std::vector<std::string> &names);
-
-    void setStepsCount(size_t stepsCount);
 
     bool setScoreMapFromFile(const std::string &fileName);
 
-    bool setConfigsFromFile(const std::string &fileName);
 
-    void setPrintingMode(bool printing);
+    static TScoreMap getDefaultScoreMap();
+
 
 private:
     TStatus status_ = TStatus::OK;
@@ -57,5 +52,4 @@ private:
 
     bool checkStrategiesCount();
 
-    static TScoreMap getDefaultScoreMap();
 };

@@ -56,6 +56,7 @@ TChoice MetaStrategy::getChoice() {
     if (strategy) {
         return strategy->getChoice();
     }
+
     int num = std::experimental::randint(0, 1);
     if (num == 0) {
         return TChoice::COOP;

@@ -6,6 +6,7 @@
 
 constexpr char kAlwaysCoopID[] = "coop";
 
+
 namespace {
     Strategy *create() {
         return new AlwaysCoopStrategy();
@@ -14,6 +15,7 @@ namespace {
 
 bool coopB = Factory<Strategy, std::string>::getInstance()->
         registerCreator(kAlwaysCoopID, create);
+
 
 TChoice AlwaysCoopStrategy::getChoice() {
     return TChoice::COOP;

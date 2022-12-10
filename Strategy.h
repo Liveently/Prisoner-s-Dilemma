@@ -33,16 +33,12 @@ public:
         orderNumber_ = orderNumber;
     }
 
-    TScoreMap getScoreMap() const;
-    size_t getOrderNumber() const;
-    TConfigs getConfigs() const;
-    TChoicesList getHistory() const;
+
 
 protected:
     size_t orderNumber_ = 0;
     TChoicesList history_;
     TScoreMap scoreMap_;
     TConfigs configsFileName_;
-
 
 };

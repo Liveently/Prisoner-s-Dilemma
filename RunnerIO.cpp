@@ -76,7 +76,7 @@ void RunnerIO::printGameResults(std::ostream &stream, size_t stepsCount,
         }
         stream << name << "\t|\t" << totalScores[name] << std::endl;
     }
-    stream << "===============================================" << std::endl;
+    stream << "===============================================" << std::endl << std::endl ;
 }
 
 void RunnerIO::printTotalResults(std::ostream &stream,
