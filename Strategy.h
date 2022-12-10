@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 
-//#include "StrategyTypesAndConstants.h"
 #include "RunnerIO.h"
 
 class Strategy {
@@ -34,7 +33,6 @@ public:
         orderNumber_ = orderNumber;
     }
 
-
     TScoreMap getScoreMap() const;
     size_t getOrderNumber() const;
     TConfigs getConfigs() const;
@@ -45,7 +43,6 @@ protected:
     TChoicesList history_;
     TScoreMap scoreMap_;
     TConfigs configsFileName_;
-
 
 
 };

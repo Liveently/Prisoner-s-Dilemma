@@ -36,7 +36,7 @@ void RunnerIO::printStepResults(std::ostream &stream, std::array<size_t, combLen
     std::map<TChoice, std::string> choiceMap;
     choiceMap[TChoice::COOP] = "C";
     choiceMap[TChoice::DEF] = "D";
-    stream << "=================== ROUND №" <<
+    stream << "=================== ROUND " <<
            stepNumber << " ==============" << std::endl;
     stream << "    NAMES    |";
     for (const auto &name: strategyNames) {

@@ -99,7 +99,8 @@ TRunnerData parseRunnerArgs(const std::vector<std::string> &params) {
 
 int main(int argc, char *argv[]) {
 
-    std::vector<std::string> params;
+    std::vector<std::string> params = {"meta", "random", "freq", "def" };
+
 
     for (size_t i = 1; i < argc; i++) { //вектор параметров командной строки
         params.emplace_back(argv[i]);
@@ -112,8 +113,11 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 
+
     Runner runner(data.mode, data.stepsCount, data.configsFileName,
                   data.scoreMapFileName, data.names);       //создали экземпляр класса Runner
+
+    runner.setMode(TMode::TOURNAMENT);
 
     if (runner.runGame(std::cout)) { //запустили runGame
     } else {

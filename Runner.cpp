@@ -8,8 +8,6 @@
 #include "Factory.h"
 
 
-
-
 namespace {
     constexpr char kQuitCommand[] = "quit";
     const TScoreMap kDefaultScoreMap = {
@@ -181,15 +179,23 @@ bool Runner::runTournament(std::ostream &stream) {
 bool Runner::runDefaultGame(std::ostream &ostream, std::istream &istream) {
     size_t stepsCount = 0;
     while (true) {
+
+
         if (gameMode_ == TMode::DETAILED) {
+
+
             std::string command;
             istream >> command;
+
+
             if (kQuitCommand == command) {
                 break;
             }
         }
         // here ew should set settings for the strategies:
         size_t idx = 0;
+
+
         for (const auto &name: strategyNames_) {
             strategies_[name]->setScoreMap(scoreMap_);
             strategies_[name]->setHistory(history_);
@@ -198,6 +204,9 @@ bool Runner::runDefaultGame(std::ostream &ostream, std::istream &istream) {
             idx++;
         }
         stepsCount++;
+
+
+
         std::array<TChoice, combLen> choices = {};
         idx = 0;
         for (const auto &name: strategyNames_) {
@@ -247,6 +256,7 @@ bool Runner::runGame(std::ostream &ostream, std::istream &istream) {
     }
 
     if (gameMode_ == TMode::TOURNAMENT) {
+
         return runTournament(ostream);
     } else {
         return runDefaultGame(ostream, istream);
